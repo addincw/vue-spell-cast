@@ -10,7 +10,8 @@
   "author": "addincw",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.6.6"
+    "vue": "^2.6.6",
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
     "@vue/cli-service": "^3.4.0",

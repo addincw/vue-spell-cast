@@ -1,22 +1,20 @@
 <template>
   <div class="home">
-    <section class="main">
-      <div class="spell-area">
-        <div class="spell-area__medium">
-          <Medium :emoji="spell.medium" :effect="spell.effect"></Medium>
-        </div>
-        <div class="spell-area__alert">
-          <div :class="[ 'alert', spell_alert ]">{{ alert_message }}</div>
-        </div>
-        <div class="spell-area__form">
-          <form class="form" @keydown.enter.prevent="">
-            <label for="">Type your spell bellow</label>
-            <input type="text" class="form__control" v-model="spell.chant">
-            <input @click="chant()" type="button" class="form__submit" value="chant!">
-          </form>
-        </div>
+    <div class="spell-area">
+      <div class="spell-area__medium">
+        <Medium :emoji="spell.medium" :effect="spell.effect"></Medium>
       </div>
-    </section>
+      <div class="spell-area__alert">
+        <div :class="[ 'alert', spell_alert ]">{{ alert_message }}</div>
+      </div>
+      <div class="spell-area__form">
+        <form class="form" @keydown.enter.prevent="">
+          <label for="">Type your spell bellow</label>
+          <input type="text" class="form__control" v-model="spell.chant">
+          <input @click="chant()" type="button" class="form__submit" value="chant!">
+        </form>
+      </div>
+    </div>
     <SpecialSpell v-if="is_special_spell" :is_special_spell="is_special_spell" :spell="special_spell" v-on:purify="is_special_spell = false" v-on:picked="successChant($event[0], $event[1]); is_special_spell = false"></SpecialSpell>
   </div>
 </template>
@@ -143,7 +141,6 @@ export default {
       return false
     },
     processSpecialChant: function(){
-      console.log("this is method processSpecialChant")
       return
     }
   }
